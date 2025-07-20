@@ -7,6 +7,8 @@
 
 import { useState } from 'react';
 import { RecurringDatePicker } from '@/components/RecurringDatePicker';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 import { format } from 'date-fns';
 
 export default function DemoPage() {
@@ -39,6 +41,9 @@ export default function DemoPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
+        {/* Navigation */}
+        <Navigation currentPage="demo" />
+
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             🗓️ Recurring Date Picker Demo
@@ -237,12 +242,10 @@ export default function DemoPage() {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="text-center mt-12 text-gray-500 text-sm">
-          <p>Built with Next.js, TypeScript, Tailwind CSS, Zustand, and ❤️</p>
-        </div>
       </div>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

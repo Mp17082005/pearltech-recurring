@@ -3,8 +3,9 @@
 import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Github, ExternalLink, Star, Code, Zap, Shield } from 'lucide-react';
+import { Calendar, Github, ExternalLink, Star, Code, Zap, Shield, Play } from 'lucide-react';
 import { RecurringDatePicker } from '@/components/RecurringDatePicker';
+import { Footer } from '@/components/Footer';
 import ClientOnly from '@/components/ClientOnly';
 import { clsx } from 'clsx';
 
@@ -84,11 +85,27 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Calendar className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold text-white">PearlTech Recurring</span>
+              <Link href="/" className="text-xl font-bold text-white hover:text-blue-300 transition-colors">
+                PearlTech Recurring
+              </Link>
             </div>
             <div className="flex items-center space-x-4">
               <Link 
-                href="https://github.com/your-repo/pearltech-recurring" 
+                href="/demo" 
+                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+              >
+                <Play className="h-4 w-4" />
+                <span className="hidden sm:inline">Full Demo</span>
+              </Link>
+              <Link 
+                href="/simple" 
+                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+              >
+                <Code className="h-4 w-4" />
+                <span className="hidden sm:inline">Simple</span>
+              </Link>
+              <Link 
+                href="https://github.com/Mp17082005/pearltech-recurring" 
                 className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -97,13 +114,13 @@ export default function HomePage() {
                 <span className="hidden sm:inline">GitHub</span>
               </Link>
               <Link 
-                href="https://pearltech-recurring.vercel.app" 
+                href="https://pearltech-recurring-331d9l5u0-mp17082005s-projects.vercel.app" 
                 className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>Live Demo</span>
+                <span>Live Site</span>
               </Link>
             </div>
           </div>
@@ -150,6 +167,33 @@ export default function HomePage() {
                 />
               </div>
 
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  href="/demo"
+                  className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                >
+                  <Play className="h-5 w-5" />
+                  <span className="font-medium">Full Demo</span>
+                </Link>
+                <Link 
+                  href="/simple"
+                  className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                >
+                  <Code className="h-5 w-5" />
+                  <span className="font-medium">Simple Example</span>
+                </Link>
+                <Link 
+                  href="https://github.com/Mp17082005/pearltech-recurring"
+                  className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="font-medium">View Code</span>
+                </Link>
+              </div>
+
               {/* Website Link Prominently Displayed */}
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <div className="flex items-center justify-between">
@@ -158,7 +202,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-sm">Experience the component in action</p>
                   </div>
                   <Link 
-                    href="https://pearltech-recurring.vercel.app"
+                    href="https://pearltech-recurring-331d9l5u0-mp17082005s-projects.vercel.app"
                     className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -279,39 +323,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black/40">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <Calendar className="h-6 w-6 text-blue-400" />
-              <span className="text-lg font-semibold text-white">PearlTech Recurring</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link 
-                href="https://github.com/your-repo/pearltech-recurring" 
-                className="text-gray-400 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5" />
-              </Link>
-              <Link 
-                href="https://pearltech-recurring.vercel.app" 
-                className="text-gray-400 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="h-5 w-5" />
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center">
-            <p className="text-gray-400 text-sm">
-              Built with Next.js 15, TypeScript, Tailwind CSS, and modern React patterns
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

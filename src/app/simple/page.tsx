@@ -7,6 +7,8 @@
 
 import { useState } from 'react';
 import { RecurringDatePicker } from '@/components/RecurringDatePicker';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 
 export default function SimpleExample() {
   const [dates, setDates] = useState<Date[]>([]);
@@ -17,7 +19,10 @@ export default function SimpleExample() {
   };
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen bg-gray-50 p-8">
+      {/* Navigation */}
+      <Navigation currentPage="simple" />
+
       <h1 className="text-2xl font-bold mb-6">Simple Recurring Date Picker Example</h1>
       
       {/* The main component */}
@@ -43,6 +48,9 @@ export default function SimpleExample() {
           </ul>
         </div>
       )}
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
