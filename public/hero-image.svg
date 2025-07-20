@@ -1,0 +1,74 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="calendarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Floating elements -->
+  <circle cx="100" cy="80" r="3" fill="rgba(255,255,255,0.3)" opacity="0.6"/>
+  <circle cx="700" cy="120" r="2" fill="rgba(255,255,255,0.4)" opacity="0.7"/>
+  <circle cx="650" cy="60" r="4" fill="rgba(255,255,255,0.2)" opacity="0.5"/>
+  
+  <!-- Main Calendar Icon -->
+  <g transform="translate(300, 100)">
+    <!-- Calendar base -->
+    <rect x="0" y="20" width="200" height="160" rx="12" fill="url(#calendarGradient)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    
+    <!-- Calendar header -->
+    <rect x="0" y="20" width="200" height="40" rx="12" fill="rgba(99, 102, 241, 0.8)"/>
+    <rect x="0" y="48" width="200" height="12" fill="rgba(99, 102, 241, 0.8)"/>
+    
+    <!-- Calendar rings -->
+    <rect x="40" y="0" width="8" height="35" rx="4" fill="rgba(255,255,255,0.9)"/>
+    <rect x="152" y="0" width="8" height="35" rx="4" fill="rgba(255,255,255,0.9)"/>
+    
+    <!-- Calendar grid -->
+    <g fill="rgba(99, 102, 241, 0.6)">
+      <circle cx="30" cy="90" r="6"/>
+      <circle cx="60" cy="90" r="6"/>
+      <circle cx="90" cy="90" r="6"/>
+      <circle cx="120" cy="90" r="6"/>
+      <circle cx="150" cy="90" r="6"/>
+      <circle cx="170" cy="90" r="6"/>
+      
+      <circle cx="30" cy="120" r="6"/>
+      <circle cx="60" cy="120" r="6"/>
+      <circle cx="90" cy="120" r="6" fill="rgba(239, 68, 68, 0.8)"/>
+      <circle cx="120" cy="120" r="6"/>
+      <circle cx="150" cy="120" r="6"/>
+      <circle cx="170" cy="120" r="6"/>
+      
+      <circle cx="30" cy="150" r="6"/>
+      <circle cx="60" cy="150" r="6" fill="rgba(239, 68, 68, 0.8)"/>
+      <circle cx="90" cy="150" r="6"/>
+      <circle cx="120" cy="150" r="6" fill="rgba(239, 68, 68, 0.8)"/>
+      <circle cx="150" cy="150" r="6"/>
+      <circle cx="170" cy="150" r="6"/>
+    </g>
+  </g>
+  
+  <!-- Recurring pattern indicators -->
+  <g transform="translate(550, 150)">
+    <path d="M0,0 Q20,20 40,0 Q60,20 80,0" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="4" fill="rgba(34, 197, 94, 0.8)"/>
+    <circle cx="40" cy="0" r="4" fill="rgba(34, 197, 94, 0.8)"/>
+    <circle cx="80" cy="0" r="4" fill="rgba(34, 197, 94, 0.8)"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="320" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">
+    Recurring Date Picker
+  </text>
+  <text x="400" y="350" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="16">
+    Advanced Next.js Component with TypeScript
+  </text>
+</svg>

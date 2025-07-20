@@ -8,7 +8,7 @@
 import { useState } from 'react';
 import { RecurringDatePicker } from '@/components/RecurringDatePicker';
 
-export function SimpleExample() {
+export default function SimpleExample() {
   const [dates, setDates] = useState<Date[]>([]);
 
   const handleDateSelection = (generatedDates: Date[]) => {
@@ -46,5 +46,3 @@ export function SimpleExample() {
     </div>
   );
 }
-
-export default SimpleExample;

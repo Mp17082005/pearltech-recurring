@@ -50,7 +50,7 @@ export const RecurringDatePicker: React.FC<RecurringDatePickerProps> = ({
   };
 
   return (
-    <div className={clsx('bg-white rounded-lg shadow-lg border', className)}>
+    <div className={clsx('bg-white rounded-lg shadow-lg border', className)} suppressHydrationWarning>
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="flex items-center">
